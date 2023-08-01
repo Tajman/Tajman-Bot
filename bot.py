@@ -38,5 +38,4 @@ def run_discord_bot():
       await send_message(message, user_message, is_private=False)
         
         
-  
   client.run(my_secret)
