@@ -73,7 +73,7 @@ def handle_response(message) -> str:
     return str(random.randint(1,6))
 
   if p_message == '!help':
-    return "`Get current weather details: !weather (city).`"
+    return "`Get current weather details: !weather (city/zip/state/country)\nGet daily stock values: !stocks (stock name) (yyyy-mm-dd)\nRandom number between 1 and 6: roll.`"
 
   if p_message.startswith('!weather'):
     city = re.search('(?<=!weather ).+', p_message).group(0)
