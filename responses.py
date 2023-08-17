@@ -4,6 +4,7 @@ import os
 import requests
 import json
 import re
+from datetime import date
 
 def get_weather(city):
   my_secret2 = os.environ['Weather_key']
@@ -81,5 +82,9 @@ def handle_response(message) -> str:
 
   if p_message.startswith('!stocks'):
     stock = re.search('(!stocks )(\w+)', p_message).group(2)
-    date = re.search('(?<=!stocks )\w+ (\d+-\d+-\d+)', p_message).group(1)
-    return get_dailyStocks(stock, date)
+    date1 = re.search('(?<=!stocks )\w+ (\d+-\d+-\d+)', p_message).group(1)
+    return get_dailyStocks(stock, date1)
+
+  if p_message == '!date':
+    today = date.today()
+    return today
