@@ -1,3 +1,5 @@
+#File for the various responses and API calls
+#from the bot. Separated into two sections.
 import random
 import discord
 import os 
@@ -6,6 +8,8 @@ import json
 import re
 from datetime import date
 
+#API calls----------------------------------------------
+#Weather API call
 def get_weather(city):
   my_secret2 = os.environ['Weather_key']
   
@@ -30,6 +34,7 @@ def get_weather(city):
   
   return embed 
 
+#Stocks information API call
 def get_dailyStocks(stock, date):
   my_secret3 = os.environ['Stock_key']
   stockS = stock.upper()
@@ -57,6 +62,7 @@ def get_dailyStocks(stock, date):
 
   return embed 
 
+#Word definition API call
 def definition(word):
   my_secret4 = os.environ['Def_key']
   
@@ -74,6 +80,7 @@ def definition(word):
 
   return embed
 
+#Response handling for each response from user to bot----------------
 def handle_response(message) -> str:
   p_message = message.lower() 
 

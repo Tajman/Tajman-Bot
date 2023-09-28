@@ -1,3 +1,4 @@
+#Runs bot code/makes connection
 import bot
 
 if __name__ == '__main__':
